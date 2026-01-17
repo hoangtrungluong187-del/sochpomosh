@@ -1,0 +1,402 @@
+/* =========================
+   Гос-стиль в духе my.gov.uz
+   ========================= */
+
+:root{
+  --blue: #0b4aa2;
+  --blue-dark: #083a80;
+  --blue-soft: rgba(11, 74, 162, 0.10);
+
+  --bg: #f2f5f9;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #5b6677;
+
+  --border: #dbe3ef;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+
+  --radius: 16px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Верхняя панель */
+.topbar{
+  background: var(--blue-dark);
+  color: #fff;
+  font-size: 13px;
+}
+
+.topbar__container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.topbar__left{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topbar__badge{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.16);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.topbar__text{
+  opacity: 0.9;
+}
+
+.topbar__right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar__link{
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.92;
+  font-weight: 600;
+}
+
+.topbar__link:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.topbar__divider{
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,0.35);
+}
+
+/* Шапка */
+.header{
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.header__container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ✅ УВЕЛИЧИЛ КВАДРАТ, ЧТОБЫ my.gov ВЛАЗИЛ */
+.brand__logo{
+  width: 62px;   /* было 54px */
+  height: 62px;  /* было 54px */
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--blue);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  box-shadow: 0 10px 22px rgba(11, 74, 162, 0.22);
+
+  /* чуть удобнее для текста */
+  font-size: 15px;
+}
+
+.brand__info{
+  line-height: 1.15;
+}
+
+.brand__title{
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--blue-dark);
+}
+
+.brand__subtitle{
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* Навигация */
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav__link{
+  text-decoration: none;
+  color: var(--blue-dark);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.nav__link:hover{
+  background: var(--blue-soft);
+}
+
+/* Основной контент */
+.main{
+  padding: 26px 16px 42px;
+}
+
+.container{
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+}
+
+@media (max-width: 900px){
+  .container{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Карточки */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Hero */
+.hero{
+  padding: 26px;
+}
+
+.hero__title{
+  margin: 0 0 10px;
+  font-size: clamp(24px, 2.8vw, 36px);
+  color: var(--blue-dark);
+  letter-spacing: -0.3px;
+}
+
+.hero__desc{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 70ch;
+}
+
+/* Огромная кнопка */
+.cta-wrap{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 14px;
+}
+
+.cta{
+  width: min(640px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-decoration: none;
+  color: #fff;
+
+  background: linear-gradient(180deg, var(--blue) 0%, var(--blue-dark) 100%);
+  border-radius: 18px;
+
+  padding: 22px 20px;
+
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+
+  box-shadow: 0 16px 35px rgba(11, 74, 162, 0.30);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.cta:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 22px 46px rgba(11, 74, 162, 0.36);
+}
+
+.cta:active{
+  transform: translateY(1px);
+  box-shadow: 0 12px 30px rgba(11, 74, 162, 0.28);
+}
+
+.cta__hint{
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0.92;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* Плашки под кнопкой */
+.hero__meta{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.meta-pill{
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: #f8fbff;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Инфо-блок справа */
+.info{
+  padding: 22px;
+}
+
+.info__title{
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--blue-dark);
+}
+
+.info__block{
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fbfdff;
+  margin-bottom: 12px;
+}
+
+.info__subtitle{
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.info__text{
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.info__list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.info__note{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(11, 74, 162, 0.06);
+  border: 1px solid rgba(11, 74, 162, 0.14);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.info__note span{
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Шаги */
+.info__steps{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+/* Поддержка */
+.info__support{
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.support__title{
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: var(--blue-dark);
+}
+
+.support__text{
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* Футер */
+.footer{
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+
+.footer__container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.footer__muted{
+  opacity: 0.85;
+}
+
+/* Фокус для доступности */
+a:focus-visible{
+  outline: 3px solid rgba(11, 74, 162, 0.30);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
